@@ -1,11 +1,10 @@
 import MySQL from 'mysql';
-//import Config from '../config.json' with { type: 'json' };
- 
+
 export default (new class Database {
 	Shutdown	= false;
 	Connection	= null;
 	
-	constructor() {
+	setConfig(Config) {
 		this.Connection = MySQL.createPool({
 			connectionLimit:	Config.Database.CONNECTIONS,
 			debug:				Config.Logging.MYSQL,
@@ -38,11 +37,12 @@ export default (new class Database {
 		}
 		
 		this.Shutdown = true;
-		/*this.Connection.end((error) => {
+		
+		this.Connection.end((error) => {
 			if(error) {
-				Logger.error('Database', error);
+				console.log('Database', error);
 			}
-		});*/
+		});
 	}
 	
 	now(date) {
@@ -62,6 +62,11 @@ export default (new class Database {
 	
 	single(query, data, object) {
 		return new Promise((success, failure) => {
+			if(this.Connection === null) {
+				failure(new Error('Not configured'));
+				return;
+			}
+			
 			this.fetch(query, data, object).then((result) => {
 				if(result.length === 0 || typeof(result[0]) === 'undefined') {
 					success(null);
@@ -79,6 +84,11 @@ export default (new class Database {
 		}
 		
 		return new Promise((success, failure) => {
+			if(this.Connection === null) {
+				failure(new Error('Not configured'));
+				return;
+			}
+			
 			this.Connection.getConnection(function(connection_error, connection) {
 				if(connection_error) {
 					failure(connection_error);
@@ -119,6 +129,11 @@ export default (new class Database {
 	
 	insert(table, parameters) {
 		return new Promise((success, failure) => {
+			if(this.Connection === null) {
+				failure(new Error('Not configured'));
+				return;
+			}
+			
 			this.Connection.getConnection((connection_error, connection) => {
 				if(connection_error) {
 					failure(connection_error);
@@ -161,6 +176,11 @@ export default (new class Database {
 	
 	update(table, where, parameters) {
 		return new Promise((success, failure) => {
+			if(this.Connection === null) {
+				failure(new Error('Not configured'));
+				return;
+			}
+			
 			let fields	= [];
 			let query	= null;
 			
