@@ -2,7 +2,7 @@
 Node.js Database Wrapper
 
 # Installation
-> npm install --save datastorages
+> `npm install --save datastorages`
 
 # Usage
 **config.json**
