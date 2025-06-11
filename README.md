@@ -26,6 +26,10 @@ Node.js Database Wrapper
 import Config from './config.json' with { type: 'json' };
 import Database from 'datastorage';
 
+/* Global Register */
+global.Database = Database;
+global.Config   = Config;
+
 /* Examples */
 console.log('Current Time:', Database.now());
 
