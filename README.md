@@ -5,13 +5,13 @@ Node.js Database Wrapper
 > npm install --save datastorages
 
 # Usage
-***config.json**
+**config.json**
 ```json
 {
 	"Database": {
 		"HOSTNAME":		"localhost",
 		"PORT":			3306,
-		"CONNECTIONS":	5,
+		"CONNECTIONS":		5,
 		"DATABASE":		"<Database>",
 		"USERNAME":		"<User>",
 		"PASSWORD":		"<Password>",
