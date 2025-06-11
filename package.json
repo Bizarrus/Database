@@ -1,6 +1,6 @@
 {
   "name": "datastorages",
-  "version": "1.0.0",
+  "version": "1.0.02",
   "description": "Node.js Database Wrapper",
   "keywords": [
     "database",
@@ -20,7 +20,8 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "mysql": "^2.18.1"
