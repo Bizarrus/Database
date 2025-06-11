@@ -1,0 +1,28 @@
+{
+  "name": "datastorages",
+  "version": "1.0.0",
+  "description": "Node.js Database Wrapper",
+  "keywords": [
+    "database",
+    "node",
+    "mysql"
+  ],
+  "homepage": "https://github.com/Bizarrus/Database#readme",
+  "bugs": {
+    "url": "https://github.com/Bizarrus/Database/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bizarrus/Database.git"
+  },
+  "license": "MIT",
+  "author": "Adrian Preuß <adrian.preuss@icloud.com> (https://github.com/Bizarrus)",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
