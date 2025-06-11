@@ -3,17 +3,19 @@
   "version": "1.0.3",
   "description": "Node.js Database Wrapper",
   "keywords": [
+	"datastorage",
     "database",
     "node",
-    "mysql"
+    "mysql",
+	"sqlite"
   ],
-  "homepage": "https://github.com/Bizarrus/Database#readme",
+  "homepage": "https://github.com/Bizarrus/Datastorages#readme",
   "bugs": {
-    "url": "https://github.com/Bizarrus/Database/issues"
+    "url": "https://github.com/Bizarrus/Datastorages/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bizarrus/Database.git"
+    "url": "git+https://github.com/Bizarrus/Datastorages.git"
   },
   "license": "MIT",
   "author": "Adrian Preuß <adrian.preuss@icloud.com> (https://github.com/Bizarrus)",
